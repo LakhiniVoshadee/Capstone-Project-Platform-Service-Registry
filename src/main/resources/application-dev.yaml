@@ -3,8 +3,18 @@ spring:
     name: service-registry
 
   config:
-    import: "configserver:"
+    import: "optional:configserver:"
+    fail-fast: false
 
   cloud:
     config:
       uri: http://localhost:9000
+      enabled: true
+
+server:
+  port: 9001
+
+eureka:
+  server:
+    enableSelfPreservation: false
+
